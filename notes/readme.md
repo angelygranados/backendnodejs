@@ -1543,9 +1543,9 @@ function moviesApi(app) {
   // delete
   router.delete("/:movieId", async function (req, res, next) {
     try {
-      const deleteMovieId = await Promise.resolve(moviesMock[0].id);
+      const deletedMovieId = await moviesService.deleteMovie({movieId});
       res.status(200).json({
-        data: deleteMovieId,
+        data: deletedMovieId,
         message: 'movies deleted'
       })
     } catch (error) {
