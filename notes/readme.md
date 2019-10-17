@@ -1249,7 +1249,7 @@ Para crear una ruta necesitamos de ``express`` pues es quien nos define el route
  * Para crear una ruta necesitamos de express pues es quien nos define el router
  */
 const express = require("express");
-const { moviesMock } = require();
+const { moviesMock } = require('../utils/mocks/movies');
 
 /** vamos a recibir una aplicación de express, lo que nos permite ser dinamicos y obtener el control,
  * sobre que aplicación va a consumir nuestra ruta.
@@ -1280,10 +1280,10 @@ function moviesApi(app) {
       // definimos su estructura json
       res.status(200).json({
         data: movies,
-        message: 'movies listend'
+        message: 'movies listed'
       })
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      next(err);
     }
   })
 }
