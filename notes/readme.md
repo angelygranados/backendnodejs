@@ -1703,6 +1703,7 @@ class MongoLib {
     return MongoLib.connection;
   }
 }
+module.exports = MongoLib
 ```
 <br>
 <div align="right">
